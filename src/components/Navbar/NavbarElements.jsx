@@ -1,30 +1,14 @@
-import { MdDarkMode } from "react-icons/md";
 import { NavLink as Link } from "react-router-dom";
 import styled from "styled-components";
 
-export const DarkMode = styled(MdDarkMode)`
-  display: none;
-  color: #fff;
-  @media screen and (max-width: 768px) {
-    display: block;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(-100%, 75%);
-    font-size: 1.8rem;
-    cursor: pointer;
-  }
-`;
-
 export const Nav = styled.nav`
-    background: white;
-    height: 100px;
+    background: black;
+    color: white;
+    height: 90px;
     display: flex;
     justify-content: start;
     align-items: center;
     border: 0.4rem solid;
-    
-    
     z-index: 12;
 `;
 
@@ -32,17 +16,16 @@ export const NavLogo = styled(Link)`
   position:relative;
   left: 34%;
   cursor: pointer;  
-  color: black;
+  color: white;
   font-size: 2.3rem;
   text-decoration: none;
   &:hover {
     color: red;
   }
-
 `;
 
 export const NavLink = styled(Link)`
-color: black;
+color: white;
 display: flex;
 align-items: center;
 text-decoration: none;

@@ -1,7 +1,7 @@
 import React from "react";
 import github from "../Assets/img/github.png";
 
-const Home = () => {
+export default function Home() {
     return (
         
         <div className="Home">
@@ -14,5 +14,3 @@ const Home = () => {
         </div>
     );
 };
-
-export default Home;

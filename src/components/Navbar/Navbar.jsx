@@ -1,14 +1,13 @@
 import React from "react";
-import { Nav, NavLogo, NavLink, DarkMode} from "./NavbarElements";
-import {BoutonToggle} from "../BoutonToggle/BoutonToggle";
+import { Nav, NavLink} from "./NavbarElements";
+import BtnToggle from "../BtnToggle/BtnToggle";
 
 const Navbar = () => {
     return (
         <>
            <Nav>           
-            <DarkMode />
-                <NavLink 
-                  to="/Home" 
+               <NavLink 
+                  to="/" 
                   activeStyle={{ color:'black' }}
                 >Home</NavLink>
                 <NavLink 
@@ -20,9 +19,7 @@ const Navbar = () => {
                   activeStyle={{ color: 'black' }}
                 >Works</NavLink>
                 <h2>WEBAGENCY</h2>
-                <NavLogo to="BoutonToggle">
-                Darkmode
-            </NavLogo> 
+                <BtnToggle />           
            </Nav> 
         </>
     );

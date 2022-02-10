@@ -1,31 +1,29 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Routes, Route } from "react-router-dom";
+import Home from "./components/Home";
+import About from "./components/About";
+import Works from "./components/Works";
 import Navbar from "./components/Navbar/Navbar";
-import Home from "./components/Pages/Home/Home";
-import About from "./components/Pages/About/About";
-import Works from "./components/Pages/Works/Works";
-import ThemeContextProvider from "./Context/ThemeContext";
-// import Projets from "./components/Projets/Projets";
+import { ThemeContext } from "./components/Context/ThemeContext";
+import StudyCase from "./components/Works/StudyCase";
 
 
-const App = () => {
-  
+function App() {
+  const { theme } = useContext(ThemeContext);
   return (
-    
-    <div className="App">    
-      <ThemeContextProvider>                 
-          <Navbar />       
-          <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/about" element={<About />} />
-              <Route path="/works" element={<Works />}>
-              </Route>
-            </Routes>      
-      </ThemeContextProvider> 
-      <Home />
-      </div>
-      
+    <div className={theme ? "lightContent" : "darkContent"}>
+      <Navbar />
+      <div>{theme}</div>
+      <Routes>
+        <Route path="/" element={<Home />}/>
+        <Route path="/about" element={<About />}></Route>
+        <Route path="/works" element={<Works />}>
+          <Route path="/works/:clientname" element={<StudyCase />}></Route>
+        </Route>     
+      </Routes>
+    </div>
   );
-};
+}
 
 export default App;
+
